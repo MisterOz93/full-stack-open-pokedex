@@ -32,8 +32,5 @@ jobs:
         with:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
-      - name: verify deploy
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: https://fullstackopen-pokedex.onrender.com/
-          method: 'GET'
+      - name: run custom healthcheck
+        run: npm run custom-health-check
