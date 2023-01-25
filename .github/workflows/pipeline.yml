@@ -28,8 +28,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: deploy to render
-        uses: bounceapp/render-action@0.6.0
+        uses: johnbeynon/render-deploy-action
         with:
-          render-token: ${{ secrets.RENDER_AUTH_TOKEN }}
-
-          
+	        service-id: ${{ secrets.some-render-service-id }}
+	        api-key: ${{ secrets.RENDER_API_TOKEN }}
