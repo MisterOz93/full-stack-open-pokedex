@@ -38,5 +38,3 @@ jobs:
         with:
           token: ${{ github.token }}
           environment: Preview
-
-      - run: echo "Deployed to: ${{ steps.deployment.outputs.url }}"
