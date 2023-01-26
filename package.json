@@ -11,7 +11,7 @@
     "test:e2e": "cypress run",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production",
-    "custom-health-check": "health_check.sh"
+    "custom-health-check": "./health_check.sh"
   },
   "repository": {
     "type": "git",
