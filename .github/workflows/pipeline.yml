@@ -36,5 +36,5 @@ jobs:
         uses: SFDigitalServices/wait-for-deployment-action@v1
         id: deployment
         with:
-          token: ${{ github.token }}
+          github-token: ${{ github.token }}
           environment: Preview
