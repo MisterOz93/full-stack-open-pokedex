@@ -32,9 +32,3 @@ jobs:
         with:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
-      - name: verify deployment
-        uses: SFDigitalServices/wait-for-deployment-action@v1
-        id: deployment
-        with:
-          github-token: ${{ github.token }}
-          environment: Preview
