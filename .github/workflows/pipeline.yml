@@ -5,7 +5,9 @@ on:
     branches:
       - master
 jobs:
+
   simple_deployment_pipeline:
+    permissions: write-all
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -33,10 +35,6 @@ jobs:
           method: 'GET'
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
-        permissions:
-          contents: 'read'
-          id-token: 'write'
-          issues: 'write'
         with:
           render-token: ${{ secrets.RENDER_AUTH_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
