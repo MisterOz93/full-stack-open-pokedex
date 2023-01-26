@@ -1,5 +1,4 @@
 const express = require('express')
-const { execSync } = require('child_process')
 const app = express()
 
 // Heroku dynamically sets a port
