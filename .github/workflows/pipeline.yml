@@ -31,11 +31,6 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
-      - name: deploy to render
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: ${{ secrets.RENDER_DEPLOY_HOOK }}
-          method: 'GET'
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
         with:
