@@ -32,3 +32,8 @@ jobs:
         with:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
+      - name: custom healthcheck
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: https://fullstackopen-pokedex.onrender.com/health
+          method: 'GET'

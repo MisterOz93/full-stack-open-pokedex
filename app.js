@@ -9,7 +9,6 @@ app.use(express.static('dist'))
 
 app.get('/health', (req, res ) => {
   // eslint-disable-next-line
-  console.log('updated')
   try {
     execSync('npm run custom-health-check')
   } catch (e) {
