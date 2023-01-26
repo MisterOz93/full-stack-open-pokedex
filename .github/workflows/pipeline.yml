@@ -37,7 +37,7 @@ jobs:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
       - name: check deploy
-        if: ${{ github.event.name != 'pull_request' }}
+        run: echo ${{ github.event.name != 'pull_request' }}
         uses: bounceapp/render-action@0.6.0
         with:
           render-token: ${{ secrets.RENDER_AUTH_TOKEN }}
