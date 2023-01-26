@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - master
-
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  issues: 'write'
 jobs:
   simple_deployment_pipeline:
-  permissions:
-    contents: 'read'
-    id-token: 'write'
-    issues: 'write'
-  
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
