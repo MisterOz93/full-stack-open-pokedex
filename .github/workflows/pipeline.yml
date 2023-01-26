@@ -30,7 +30,7 @@ jobs:
       - name: deploy to render
         uses: JorgeLNJunior/render-deploy@v1.3.0
         with:
-          service_id: ${{ secrets.RENDER_DEPLOY_HOOK }} # required
+          service_id: ${{ secrets.RENDER_SERVICE_ID }} # required
           api_key: ${{ secrets.RENDER_AUTH_TOKEN }} # required
           clear_cache: false # Clear build cache. Optional
           wait_deploy: true # Wait until the deploy status is successful. Warning! Free Render services can take +10 minutes to be fully deployed. Optional
