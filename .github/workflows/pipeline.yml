@@ -63,4 +63,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
         if: ${{ github.event_name == 'push' }}
-        #ph text for commits
