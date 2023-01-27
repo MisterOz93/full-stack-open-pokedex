@@ -38,7 +38,7 @@ jobs:
           method: 'GET'
       - name: debug github object
         run: echo "i shouldnt see this"
-        if: github.event.action != "synchronize"
+        if: github.event.action != synchronize
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
         with:
