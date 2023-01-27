@@ -36,8 +36,11 @@ jobs:
         with:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
-      - name: debug github object
-        run: echo "i should see this"
+      - name: send health check to deployed site
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: https://fullstackopen-pokedex.onrender.com/health
+          method: 'GET'
         if: github.event.action == 'synchronize'
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
