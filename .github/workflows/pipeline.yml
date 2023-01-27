@@ -37,8 +37,8 @@ jobs:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
       - name: debug github object
-        run: echo "i shouldnt see this"
-        if: github.event.action != 'synchronize'
+        run: echo "i should see this"
+        if: github.event.action == 'synchronize'
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
         with:
@@ -48,3 +48,4 @@ jobs:
           retries: 5
           wait: 10000
           sleep: 15000
+        if: github.event.action != 'synchronize'
