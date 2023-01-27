@@ -59,4 +59,8 @@ jobs:
           DEFAULT_BUMP: patch
           WITH_V: true
         if: ${{ github.event_name == 'push' }}
+<<<<<<< HEAD
         #ph text for commit
+=======
+        #ph to allow commit
+>>>>>>> b7bb522ef6dd61b065d648680fcfcd97b9cb893f
