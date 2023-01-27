@@ -5,7 +5,7 @@ import LoadingSpinner from './LoadingSpinner'
 import ErrorMessage from './ErrorMessage'
 import PokemonPage from './PokemonPage'
 import PokemonList from './PokemonList'
-
+//placeholder to trigger pull request.
 const mapResults = (({ results }) => results.map(({ url, name }) => ({
   url,
   name,
