@@ -37,7 +37,7 @@ jobs:
         with:
           url: ${{ secrets.RENDER_DEPLOY_HOOK }}
           method: 'GET'
-        if: ${{ github.event_name == 'push' }} && (!contains(join(github.event.commits.*.message), '#skip'))
+        if: ${{ github.event_name == 'push' && (!contains(join(github.event.commits.*.message), '#skip')) }}
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
         with:
@@ -47,7 +47,7 @@ jobs:
           retries: 5
           wait: 10000
           sleep: 15000
-        if: ${{ github.event_name == 'push' }} && (!contains(join(github.event.commits.*.message), '#skip'))
+        if: ${{ github.event_name == 'push'  && (!contains(join(github.event.commits.*.message), '#skip')) }}
   tag_release:
     needs: [simple_deployment_pipeline]
     permissions: write-all 
@@ -64,4 +64,4 @@ jobs:
           DEFAULT_BUMP: patch
           DEFAULT_BRANCH: master
           PRERELEASE: false
-        if: ${{ github.event_name == 'push' }} && (!contains(join(github.event.commits.*.message), '#skip'))
+        if: ${{ github.event_name == 'push' && (!contains(join(github.event.commits.*.message), '#skip')) }}
