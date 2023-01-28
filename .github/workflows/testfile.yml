@@ -19,5 +19,5 @@ jobs:
           COMMITS: ${{ toJson(github.event.commits) }}
         run: echo "$COMMITS"
       - name: should only work if '#skip is in msg'
-        if: contains( "#skip", toJSON(github.event.commits.*.message) ) 
+        if: contains( "#skip", github.event.commits.*.message) 
         run: echo "worked."
