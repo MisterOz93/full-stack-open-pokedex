@@ -20,4 +20,4 @@ jobs:
         run: echo "$COMMITS"
       - name: should only work if '#skip is in msg'
         if: contains(join(github.event.commits.*.message), '#skip') 
-        run: echo "worked!"
+        run: echo "worked"
