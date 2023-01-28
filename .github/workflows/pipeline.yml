@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    branches: [master]
+    branches: [master { prerelease: false }]
     types: [opened, synchronize]
     
 jobs:
@@ -65,6 +65,5 @@ jobs:
           DEFAULT_BRANCH: master
           DRY_RUN: true
           PRERELEASE: false
-          PRERELEASE_SUFFIX: false
         if: ${{ github.event_name == 'push' }}
 #ph
