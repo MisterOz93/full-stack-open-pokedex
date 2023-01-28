@@ -64,6 +64,7 @@ jobs:
           DEFAULT_BUMP: patch
           DEFAULT_BRANCH: master
           DRY_RUN: true
-          PRE_RELEASE: false
+          PRERELEASE: false
+          PRERELEASE_SUFFIX: false
         if: ${{ github.event_name == 'push' }}
 #ph
