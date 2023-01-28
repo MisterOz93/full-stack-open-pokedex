@@ -63,5 +63,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           DRY_RUN: true
-          INITIAL_VERSION: 0.1.0
         if: ${{ github.event_name == 'push' }}
