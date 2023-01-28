@@ -62,6 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
-          PRERELEASE: false 
+          DEFAULT_BRANCH: master
+          DRY_RUN: true
         if: ${{ github.event_name == 'push' }}
 #ph
