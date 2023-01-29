@@ -41,7 +41,7 @@ jobs:
       - name: check deploy
         uses: bounceapp/render-action@0.6.0
         with:
-          render-token: ${{ secrets.RENDER_AUTH_TOKEN }}
+          render-token: break #${{ secrets.RENDER_AUTH_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
           retries: 5
