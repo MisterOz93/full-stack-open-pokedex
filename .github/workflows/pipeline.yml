@@ -80,23 +80,3 @@ jobs:
           PRERELEASE: false
         if: ${{ github.event_name == 'push' && (!contains(join(github.event.commits.*.message), '#skip')) }}
         #ph
-
-    name: workflow_notification:
-    needs: [simple_deployment_pipeline]
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: deploy success
-        uses: rjstone/discord-webhook-notify@v1
-        if: success()
-        with:
-          severity: info
-          details: Deployment Pipeline successful
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: deploy failure
-        uses: rjstone/discord-webhook-notify@v1
-        if: failure()
-        with:
-          severity: error
-          details: build failed
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
