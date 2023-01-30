@@ -23,8 +23,14 @@ jobs:
       - name: start srvr
         run: npm run start-prod
 
+  wait-on-server:
+    runs-on: ubuntu-20.04
+    steps: 
+      run: sleep 120s
+      shell: bash
+
   periodic-healthcheck:
-    needs: [start-server]
+    needs: [wait-on-server]
     runs-on: ubuntu-20.04
     steps:
       - uses: fjogeleit/http-request-action@v1
