@@ -11,7 +11,11 @@ jobs:
   periodic-healthcheck:
     runs-on: ubuntu-20.04
     steps:
-      - uses: jtalk/url-health-check-action@v3
+      - uses: fjogeleit/http-request-action@v1
         with:
-          url: http://localhost:5000/health
+          url: 'http://localhost:5000/health'
+          method: 'GET'
+      #- uses: jtalk/url-health-check-action@v3
+        #with:
+          #url: https://fullstackopen-pokedex.onrender.com/health
      
