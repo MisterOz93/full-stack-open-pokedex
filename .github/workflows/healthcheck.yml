@@ -9,7 +9,7 @@ on:
   
 jobs:
 
-  periodic-healthcheck:
+  start-server:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -22,6 +22,11 @@ jobs:
         run: npm run build
       - name: start srvr
         run: npm run start-prod
+
+  periodic-healthcheck:
+    needs: [start-server]
+    runs-on: ubuntu-20.04
+    steps:
       - uses: fjogeleit/http-request-action@v1
         with:
           url: 'http://localhost:5000/health'
