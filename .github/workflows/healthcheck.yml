@@ -8,7 +8,7 @@ on:
       - master
   
 jobs:
-  periodic healthcheck:
+  periodic-healthcheck:
     runs-on: ubuntu-20.04
     steps:
       - uses: jtalk/url-health-check-action@v3
