@@ -26,8 +26,8 @@ jobs:
   wait-on-server:
     runs-on: ubuntu-20.04
     steps: 
-      run: sleep 120s
-      shell: bash
+      - run: sleep 120s
+        shell: bash
 
   periodic-healthcheck:
     needs: [wait-on-server]
