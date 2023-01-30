@@ -8,9 +8,20 @@ on:
       - master
   
 jobs:
+
   periodic-healthcheck:
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: npm install
+        run: npm install
+      - name: build
+        run: npm run build
+      - name: start srvr
+        run: npm run start-prod
       - uses: fjogeleit/http-request-action@v1
         with:
           url: 'http://localhost:5000/health'
