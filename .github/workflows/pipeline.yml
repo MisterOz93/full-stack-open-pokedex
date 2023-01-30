@@ -48,6 +48,7 @@ jobs:
           wait: 10000
           sleep: 15000
         if: ${{ github.event_name == 'push'  && (!contains(join(github.event.commits.*.message), '#skip')) }}
+  #discord notification, commented out to not spam channel 
  #     - name: deploy success
     #    uses: rjstone/discord-webhook-notify@v1
      #   if: success()
@@ -79,4 +80,3 @@ jobs:
           DEFAULT_BRANCH: master
           PRERELEASE: false
         if: ${{ github.event_name == 'push' && (!contains(join(github.event.commits.*.message), '#skip')) }}
-        #ph
