@@ -5,7 +5,7 @@ on:
     - cron: '0 * * * * ' #on the hour every hour
   
 jobs:
-  periodic healthcheck:
+  periodic_healthcheck:
     runs-on: ubuntu-20.04
     steps:
       - uses: jtalk/url-health-check-action@v3
