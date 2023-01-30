@@ -9,6 +9,7 @@ on:
   
 jobs:
   periodic healthcheck:
+    runs-on: ubuntu-20.04
     steps:
       - uses: jtalk/url-health-check-action@v3
         with:
