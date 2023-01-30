@@ -13,5 +13,5 @@ jobs:
     steps:
       - uses: jtalk/url-health-check-action@v3
         with:
-          url: https://localhost:5000/health
+          url: http://localhost:5000/health
      
