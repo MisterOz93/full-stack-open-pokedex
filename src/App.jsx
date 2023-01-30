@@ -13,7 +13,7 @@ const mapResults = (({ results }) => results.map(({ url, name }) => ({
 })))
 
 const App = () => {
-  const { data: pokemonList, error, isLoading } = useApi('https://pokeapi.co/api/v2/pokemon/?limit=50', mapResults)
+  const { data: pokemonList, error, isLoading } = useApi('https://pokeapi.co/api/v2/breakbreakbreakbreakpokemon/?limit=50', mapResults) //intentionally break url to test pipeline
   if (isLoading) {
     return <LoadingSpinner />
   }
