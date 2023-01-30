@@ -5,10 +5,9 @@ on:
     - cron: '*/5 * * * *' #every 5min
   
 jobs:
-  
   periodic healthcheck:
-    name: Periodic Healthcheck
-    uses: jtalk/url-health-check-action@v3
-    with:
-      url: https://fullstackopen-pokedex.onrender.com/health
+    steps:
+      - uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://fullstackopen-pokedex.onrender.com/health
      
